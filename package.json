@@ -1,0 +1,23 @@
+{
+  "name": "objects",
+  "version": "1.0.0",
+  "description": "Helper util for objects where it's vital to allow a project to continue when an object property is missing, malformed, or otherwise not as expected.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "objects",
+    "helper",
+    "util",
+    "property",
+    "missing",
+    "malformed",
+    "expects",
+    "merge",
+    "path"
+  ],
+  "author": "Levi Roberts",
+  "license": "MIT"
+}
