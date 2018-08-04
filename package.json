@@ -1,6 +1,6 @@
 {
   "name": "@expressivejs/objects",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Helper util for objects where it's vital to allow a project to continue when an object property is missing, malformed, or otherwise not as expected.",
   "main": "index.js",
   "types": "index.d.ts",
