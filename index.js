@@ -6,6 +6,7 @@ module.exports = {
   //expectsPath: expectsObjectPathSchema // for nested objects
 
   merge: mergeObjects,
+  clone: cloneObject,
 }
 
 function expectObjectSchema(obj, initializer, init = true) {
@@ -36,4 +37,35 @@ function mergeObjects(obj1, obj2, options) {
   }
 
   return mergedObj
+}
+
+function cloneObject(obj) {
+  // This function is an attempt to deep clone an object.
+  let clone = {}
+
+  for (let prop in obj) {
+    if (typeof obj[prop] == 'undefined' || !obj[prop])
+
+      clone[prop] = obj[prop]
+
+    if (typeof obj[prop] == 'object' && Array.isArray(obj[prop])) {
+
+      clone[prop] = Array.from(obj[prop])
+
+    } else if (typeof obj[prop] == 'object') {
+
+      clone[prop] = cloneObject(obj[prop])
+
+    } else if (typeof obj[prop] == 'function') {
+
+      clone[prop] = new Function(`return ${ obj[prop].toString() }`)()
+
+    } else {
+
+      clone[prop] = obj[prop]
+
+    }
+  }
+
+  return clone
 }
